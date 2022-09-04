@@ -1,4 +1,4 @@
-import { getThemeVariables, ThemeSelectVar } from 'antd/dist/theme'
+import { getThemeVariables, ThemeSelectVar } from 'antd/dist/theme.js'
 import { resolve } from 'path'
 
 export const generateModifyVars = (dark = false) => {
@@ -6,6 +6,6 @@ export const generateModifyVars = (dark = false) => {
 
     return {
         ...modifyVars,
-        hack: `true; @import (reference) "${resolve('src/design/config.less')}"`,
+        hack: `${modifyVars.hack} @import (reference) "${resolve('src/design/config.less')}"`,
     }
 }

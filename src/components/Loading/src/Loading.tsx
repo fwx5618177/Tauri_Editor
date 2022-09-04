@@ -1,5 +1,5 @@
 import { Spin } from 'antd'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React, { useRef } from 'react'
 import { LoadingProps } from './types'
 import { SizeEnum } from '/@/enums/sizeEnum'
@@ -35,12 +35,12 @@ LoadingComponents.defaultProps = {
 }
 
 LoadingComponents.propTypes = {
-    tip: PropTypes.string.isRequired,
-    size: PropTypes.oneOf([SizeEnum.DEFAULT, SizeEnum.LARGE, SizeEnum.SMALL]).isRequired,
-    absolute: PropTypes.bool.isRequired,
-    loading: PropTypes.bool.isRequired,
-    background: PropTypes.string.isRequired,
-    theme: PropTypes.oneOf(['dark', 'light']),
+    tip: propTypes.string.isRequired,
+    size: propTypes.oneOf([SizeEnum.DEFAULT, SizeEnum.LARGE, SizeEnum.SMALL]).isRequired,
+    absolute: propTypes.bool.isRequired,
+    loading: propTypes.bool.isRequired,
+    background: propTypes.string.isRequired,
+    theme: propTypes.oneOf(['dark', 'light']),
 }
 
 export default LoadingComponents

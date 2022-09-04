@@ -1,8 +1,8 @@
-declare module 'antd/dist/theme' {
+declare module 'antd/dist/theme.js' {
     import { darkThemeSingle, compactThemeSingle, getThemeVariables } from 'antd/dist/theme.js'
     import defaultTheme from 'antd/dist/default-theme.js'
 
-    export interface ThemeVar {
+    export interface ThemeOption {
         dark?: boolean
         compact?: boolean
         [key: string]: any
@@ -1651,10 +1651,10 @@ declare module 'antd/dist/theme' {
     export type ThemeSelectCompactVar = ThemeVar & CompactThemeSingle
     export type ThemeSelectVar = ThemeSelectDarkVar | ThemeSelectCompactVar
 
-    export function getThemeVariables(options: DefaultThemeI = {}): ThemeSelectVar
+    export function getThemeVariables(options: ThemeOption): ThemeSelectVar
 
     const getThemeVariables: getThemeVariables
     const defaultTheme: defaultTheme
 
-    export { darkThemeSingle, compactThemeSingle, getThemeVariables }
+    export { darkThemeSingle, compactThemeSingle }
 }
