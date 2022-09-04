@@ -1,48 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import { invoke } from '@tauri-apps/api/tauri'
-import './App.css'
+import { ConfigProvider } from 'antd'
+import { Suspense } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { LoadingComponents } from './components/Loading'
 
-function App() {
-    const [greetMsg, setGreetMsg] = useState('')
-    const [name, setName] = useState('')
-
-    async function greet() {
-        setGreetMsg(await invoke('greet', { name }))
-    }
-
+const App = () => {
     return (
-        <div className='container'>
-            <h1>Welcome to Tauri!</h1>
-
-            <div className='row'>
-                <a href='https://vitejs.dev' target='_blank'>
-                    <img src='/vite.svg' className='logo vite' alt='Vite logo' />
-                </a>
-                <a href='https://tauri.app' target='_blank'>
-                    <img src='/tauri.svg' className='logo tauri' alt='Tauri logo' />
-                </a>
-                <a href='https://reactjs.org' target='_blank'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
-            </div>
-
-            <p>Click on the Tauri, Vite, and React logos to learn more about each framework.</p>
-
-            <div className='row'>
-                <div>
-                    <input
-                        id='greet-input'
-                        onChange={e => setName(e.currentTarget.value)}
-                        placeholder='Enter a name...'
-                    />
-                    <button type='button' onClick={() => greet()}>
-                        Greet
-                    </button>
-                </div>
-            </div>
-            <p>{greetMsg}</p>
-        </div>
+        <>
+            <ConfigProvider>
+                <BrowserRouter>
+                    <Suspense
+                        fallback={
+                            <LoadingComponents
+                                {...{
+                                    tip: 'loading...',
+                                    background: 'rgba(111,111,111,.7)',
+                                    theme: 'dark',
+                                    loading: false,
+                                    absolute: false,
+                                }}
+                            />
+                        }
+                    >
+                        <Routes>
+                            <Route
+                                index={false}
+                                path={'/'}
+                                element={
+                                    <LoadingComponents
+                                        {...{
+                                            tip: 'loading...',
+                                            background: 'rgba(111,111,111,.7)',
+                                            theme: 'dark',
+                                            loading: true,
+                                            absolute: false,
+                                        }}
+                                    />
+                                }
+                            />
+                        </Routes>
+                    </Suspense>
+                </BrowserRouter>
+            </ConfigProvider>
+        </>
     )
 }
 

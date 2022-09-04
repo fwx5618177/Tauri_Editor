@@ -67,7 +67,8 @@
         "title": "tauri",
         "width": 800,
         "transparent": true,
-        "theme": "Dark"
+        "theme": "Dark",
+        "decorations": true
       }
     ]
   }
