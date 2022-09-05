@@ -65,7 +65,7 @@
         "height": 600,
         "resizable": true,
         "title": "tauri",
-        "width": 800,
+        "width": 1000,
         "transparent": true,
         "theme": "Dark",
         "decorations": true

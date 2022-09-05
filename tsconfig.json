@@ -28,9 +28,6 @@
     "types": [
       "vite/client"
     ],
-    "typeRoots": [
-      "./types"
-    ]
   },
   "include": [
     "src/**/*.d.ts",

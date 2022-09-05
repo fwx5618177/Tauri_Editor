@@ -13,19 +13,7 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { LockOutlined } from '@ant-design/icons'
-
-function Copyright(props: any) {
-    return (
-        <Typography variant='body2' color='text.secondary' align='center' {...props}>
-            {'Copyright © '}
-            <Link color='inherit' href='https://mui.com/'>
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    )
-}
+import Copyright from '/@/layout/default/footer/copyright'
 
 const theme = createTheme()
 

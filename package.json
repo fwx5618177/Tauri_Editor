@@ -21,7 +21,7 @@
         "reinstall": "rimraf package-lock.json && rimraf yarn.lock.json && rimraf node_modules && npm run bootstrap"
     },
     "engines": {
-        "node": "^14.15.0 || ^16.10.0 || >=18.0.0"
+        "node": "^16.10.0 || >=18.0.0"
     },
     "dependencies": {
         "@ant-design/icons": "^4.7.0",
