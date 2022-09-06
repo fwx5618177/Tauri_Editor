@@ -10,7 +10,7 @@ import { lazy } from 'react'
 const BasicRoutes = [
     {
         path: '/signin',
-        component: lazy(() => import('src/views/sys/signin/Signin')),
+        component: lazy(() => import('/@/views/sys/signin/Signin')),
         auth: false,
     },
     {

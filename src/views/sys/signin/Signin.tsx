@@ -18,6 +18,8 @@ import Copyright from '/@/layout/default/footer/copyright'
 const theme = createTheme()
 
 const SignInSide = (props: any) => {
+    console.log(props)
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         const data = new FormData(event.currentTarget)
