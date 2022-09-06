@@ -35,6 +35,9 @@ const App = () => {
                                             <div
                                                 style={{
                                                     display: 'flex',
+                                                    justifyContent: 'space-around',
+                                                    alignContent: 'center',
+                                                    margin: 5,
                                                 }}
                                             >
                                                 <Button type='primary'>
@@ -45,6 +48,9 @@ const App = () => {
                                                 </Button>
                                                 <Button type='primary'>
                                                     <Link to={'/home'}>Home</Link>
+                                                </Button>
+                                                <Button type='primary'>
+                                                    <Link to={'/text'}>Text</Link>
                                                 </Button>
                                             </div>
                                         </>
@@ -60,6 +66,8 @@ const App = () => {
                                         </RequireAuth>
                                     }
                                 />
+
+                                <Route path='/text' element={1} />
                                 <Route
                                     path='*'
                                     element={

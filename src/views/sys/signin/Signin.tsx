@@ -14,11 +14,12 @@ import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { LockOutlined } from '@ant-design/icons'
 import Copyright from '/@/layout/default/footer/copyright'
+import AuthConsumer from '/@/router/guard/authprovide'
 
 const theme = createTheme()
 
 const SignInSide = (props: any) => {
-    console.log(props)
+    const { login } = AuthConsumer()
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -27,6 +28,11 @@ const SignInSide = (props: any) => {
             email: data.get('email'),
             password: data.get('password'),
             props,
+        })
+
+        login({
+            username: data.get('email') as string,
+            password: data.get('password') as string,
         })
     }
 
