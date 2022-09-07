@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { LoadingComponents } from './components/Loading'
 import { AuthProvider } from './router/guard/authprovide'
 import { RequireAuth } from './router/guard/requireauth'
+import LogicFlow from './views/logicflow/LogicFlow'
 import Home from './views/sys/home/home'
 import ResultPage from './views/sys/result'
 import SignInSide from './views/sys/signin/Signin'
@@ -50,7 +51,7 @@ const App = () => {
                                                     <Link to={'/home'}>Home</Link>
                                                 </Button>
                                                 <Button type='primary'>
-                                                    <Link to={'/text'}>Text</Link>
+                                                    <Link to={'/logicflow'}>Text</Link>
                                                 </Button>
                                             </div>
                                         </>
@@ -67,7 +68,7 @@ const App = () => {
                                     }
                                 />
 
-                                <Route path='/text' element={1} />
+                                <Route path='/logicflow' element={<LogicFlow />} />
                                 <Route
                                     path='*'
                                     element={
