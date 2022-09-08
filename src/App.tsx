@@ -8,6 +8,7 @@ import LogicFlow from './views/logicflow/LogicFlow'
 import Home from './views/sys/home/home'
 import ResultPage from './views/sys/result'
 import SignInSide from './views/sys/signin/Signin'
+import Vision from './views/vision/Vision'
 
 const App = () => {
     return (
@@ -53,6 +54,9 @@ const App = () => {
                                                 <Button type='primary'>
                                                     <Link to={'/logicflow'}>Text</Link>
                                                 </Button>
+                                                <Button type='primary'>
+                                                    <Link to={'/g6'}>g6</Link>
+                                                </Button>
                                             </div>
                                         </>
                                     }
@@ -68,7 +72,8 @@ const App = () => {
                                     }
                                 />
 
-                                <Route path='/logicflow' element={<LogicFlow />} />
+                                <Route path='/logicflow' element={<LogicFlow text={[]} />} />
+                                <Route path='/g6' element={<Vision />} />
                                 <Route
                                     path='*'
                                     element={

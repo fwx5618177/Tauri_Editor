@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@ant-design/icons": "^4.7.0",
+        "@antv/g6": "^4.7.2",
         "@antv/x6": "^1.34.0",
         "@emotion/react": "^11.10.4",
         "@emotion/styled": "^11.10.4",
