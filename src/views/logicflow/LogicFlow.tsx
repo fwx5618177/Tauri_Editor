@@ -4,11 +4,16 @@ import { useEffect, useRef, useState } from 'react'
 
 const LogicFlow = () => {
     const graphRef = useRef<HTMLDivElement>(null)
-    const [graphNode, setGraphNode] = useState<Graph>(null as unknown as Graph)
+    const [graphObj, setGraphObj] = useState<Graph>(null as unknown as Graph)
 
-    const init = () => {
+    const initial = () => {
         ;(graphRef.current as HTMLDivElement).style.width = document.body.clientWidth + 'px'
-        ;(graphRef.current as HTMLDivElement).style.height = document.body.clientHeight / 2 + 'px'
+        ;(graphRef.current as HTMLDivElement).style.height = document.body.clientHeight + 'px'
+
+        window.addEventListener('resize', () => {
+            ;(graphRef.current as HTMLDivElement).style.width = document.body.clientWidth + 'px'
+            ;(graphRef.current as HTMLDivElement).style.height = document.body.clientHeight + 'px'
+        })
 
         const graph = new Graph({
             container: graphRef.current as HTMLDivElement,
@@ -16,13 +21,7 @@ const LogicFlow = () => {
             autoResize: true,
         })
 
-        window.addEventListener('resize', () => {
-            ;(graphRef.current as HTMLDivElement).style.width = document.body.clientWidth + 'px'
-            ;(graphRef.current as HTMLDivElement).style.height =
-                document.body.clientHeight / 2 + 'px'
-        })
-
-        setGraphNode(graph)
+        setGraphObj(graph)
     }
 
     interface NodeInfo {
@@ -35,19 +34,21 @@ const LogicFlow = () => {
 
     const nodes: NodeInfo[] = [
         {
-            text: 'fwx',
+            text: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.`,
         },
         {
-            text: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.`,
+            text: `fwx`,
         },
     ]
 
-    const addNodes = nodes.map((ci, index) => ({
-        x: 160 + index * 10,
-        y: 220 + index * 5,
+    const conf = nodes.map((ci, index) => ({
+        x: 160 + index * 20,
+        y: 220 + index * 20,
+        // width: 360,
+        // height: 120,
+        width: ci.text.length * 40 > 300 ? 300 : ci.text.length * 40,
+        height: (ci.text.length * 40 - 300) / 50 > 100 ? (ci.text.length * 40 - 300) / 50 : 100,
         shape: 'text-block',
-        width: ci?.text?.length * 5 > 300 ? 300 : ci?.text?.length * 20,
-        height: (ci?.text?.length * 5) / 5 > 100 ? ci?.text?.length : 100,
         text: ci.text,
         attrs: {
             body: {
@@ -59,8 +60,12 @@ const LogicFlow = () => {
         },
     }))
 
+    const graphNode = () => {
+        graphObj.addNodes(conf)
+    }
+
     useEffect(() => {
-        init()
+        initial()
     }, [])
     useEffect(() => {
         if (graphNode) {
@@ -68,6 +73,13 @@ const LogicFlow = () => {
             graphNode.addNodes(addNodes)
         }
     }, [graphNode])
+
+    useEffect(() => {
+        if (graphObj) {
+            graphObj.clearBackground()
+            graphNode()
+        }
+    }, [graphObj])
 
     return (
         <>
@@ -82,7 +94,6 @@ const LogicFlow = () => {
                 id='container'
                 style={{
                     display: 'flex',
-                    minHeight: 800,
                 }}
                 ref={graphRef}
             ></div>
