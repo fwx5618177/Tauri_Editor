@@ -1,5 +1,6 @@
 import { Card } from 'antd'
-import CustomTool from './CustomTool'
+import DragNodes from './DragNodes'
+import MindMap from './MindMap'
 
 const Vision = () => {
     return (
@@ -9,7 +10,15 @@ const Vision = () => {
                     margin: 12,
                 }}
             >
-                <CustomTool />
+                <DragNodes />
+            </Card>
+
+            <Card
+                style={{
+                    margin: 12,
+                }}
+            >
+                <MindMap />
             </Card>
         </>
     )
