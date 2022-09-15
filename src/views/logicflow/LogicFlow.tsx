@@ -69,8 +69,8 @@ const LogicFlow = () => {
     }, [])
     useEffect(() => {
         if (graphNode) {
-            graphNode.clearBackground()
-            graphNode.addNodes(addNodes)
+            graphNode?.clearBackground()
+            graphNode?.addNodes(addNodes)
         }
     }, [graphNode])
 
