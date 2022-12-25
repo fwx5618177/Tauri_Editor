@@ -6,7 +6,6 @@ import { loadEnv } from 'vite'
 import { wrapperEnv } from './build/utils'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
-import { generateModifyVars } from './build/generate/generateModifyVars'
 
 const pathResolve = (dir: string): string => {
     return resolve(process.cwd(), '.', dir)
@@ -43,7 +42,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
             preprocessorOptions: {
                 less: {
                     javascriptEnabled: true,
-                    modifyVars: generateModifyVars(),
                 },
             },
         },

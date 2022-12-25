@@ -1,0 +1,15 @@
+.header {
+  position: relative;
+  user-select: none;
+  background-color: red;
+
+  .logo {
+    
+    width: 60px;
+    height: 100%;
+    
+    &:hover {
+      background: rgba(94, 94, 94, 0.2);
+    }
+  }
+}
