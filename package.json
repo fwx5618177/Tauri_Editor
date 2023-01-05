@@ -6,7 +6,7 @@
         "prepare": "husky install",
         "bootstrap": "npm install",
         "dev": "cross-env NODE_ENV=development vite",
-        "commit": "czg",
+        "czg": "czg",
         "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "build": "tsc && vite build",
         "preview": "vite preview",
