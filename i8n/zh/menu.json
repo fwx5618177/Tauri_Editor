@@ -1,3 +1,6 @@
 {
-  "name": "编辑器"
+  "name": "编辑器",
+  "welcomeTitle": "欢迎使用",
+  "welcomeDesc": "本软件目前仍在测试阶段",
+  "welcomeEntry": "进入"
 }

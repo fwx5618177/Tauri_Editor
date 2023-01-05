@@ -1,12 +1,60 @@
+@import './animation.scss';
+
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
-  background-color: #AEAEAE;
+    --main-color: #9b66fe;
+    --rs-bg-overlay: #29292f;
+    --rs-btn-primary-bg: #9b66fe;
+    --rs-btn-primary-hover-bg: #7c52cb;
+    --rs-btn-primary-active-bg: #b48cfe;
+    --rs-bg-backdrop: rgba(0, 0, 0, 0.5);
+    --rs-text-heading: #fff;
+    --welcome-background-color: #d9cab7;
+    --welcome-color: #003c96;
 }
 
 body {
-  overflow-x: hidden;
+    background-color: rgba(#1a1a1e, 0.5);
+    font-weight: 500;
+    overflow-x: hidden;
+    color: #fff;
+    font-family: inherit;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    color: inherit;
+
+    &:visited {
+        color: inherit;
+    }
+
+    &:hover,
+    &:focus {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+img {
+    border-style: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    word-break: break-word;
 }

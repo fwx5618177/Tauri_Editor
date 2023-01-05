@@ -1,3 +1,6 @@
 {
-  "name": "Editor"
+  "name": "Editor",
+  "welcomeTitle": "Welcome",
+  "welcomeDesc": "It still is alpha version.",
+  "welcomeEntry": "Entry"
 }

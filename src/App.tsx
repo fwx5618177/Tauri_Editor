@@ -1,9 +1,11 @@
-import AppHeader from '/@/components/AppHeader/AppHeader'
+import Welcome from './views/Welcome'
+// import AppHeader from '/@/components/AppHeader/AppHeader'
 
 const App = () => {
     return (
         <>
-            <AppHeader />
+            {/* <AppHeader /> */}
+            <Welcome />
         </>
     )
 }
