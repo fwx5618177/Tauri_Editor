@@ -1,0 +1,15 @@
+[
+  {
+      "label": "English",
+      "value": "en"
+  },
+  {
+      "label": "中文",
+      "value": "zh"
+  },
+  {
+      "label": "阿拉伯语",
+      "value": "arab",
+      "disabled": true
+  }
+]

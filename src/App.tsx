@@ -1,11 +1,9 @@
-import AppHeader from './components/AppHeader/AppHeader'
+import AppHeader from '/@/components/AppHeader/AppHeader'
 
 const App = () => {
     return (
         <>
-            <div>
-                <AppHeader />
-            </div>
+            <AppHeader />
         </>
     )
 }

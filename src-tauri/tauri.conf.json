@@ -64,10 +64,10 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "tauri",
+        "title": "Tarui Demo",
         "width": 1000,
         "transparent": true,
-        "theme": "Dark",
+        "theme": "Light",
         "decorations": true
       }
     ]

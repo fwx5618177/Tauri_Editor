@@ -19,11 +19,15 @@
     "rootDir": ".",
     "paths": {
       "/@/*": [
-        "src/*"
+        "./src/*"
       ],
       "/#/*": [
-        "types/*"
-      ]
+        "./types/*"
+      ],
+      "@i8n/*": ["./i8n/*"],
+      "@tests/*": ["./tests/*"],
+      "@mocks/*": ["./mocks/*"],
+      "~styles": ["./src/styles/*"]
     },
     "types": [
       "vite/client"

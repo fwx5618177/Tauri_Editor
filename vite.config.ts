@@ -17,12 +17,10 @@ const __APP_INFO__ = {
     lastBuildTime: dayjs().format('YYYY-MM-DD HH:mm:ss'),
 }
 
-// https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfig => {
     const root = process.cwd()
     const env = loadEnv(mode, root)
 
-    // The boolean type read by loadEnv is a string. This function can be converted to boolean type
     const viteEnv = wrapperEnv(env)
 
     const isBuild = command === 'build'
@@ -47,20 +45,30 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         },
         resolve: {
             alias: [
-                // /@/xxxx => src/xxxx
                 {
                     find: /\/@\//,
                     replacement: pathResolve('src') + '/',
                 },
-                // /#/xxxx => types/xxxx
                 {
                     find: /\/#\//,
                     replacement: pathResolve('types') + '/',
                 },
-                // {
-                //     find: /^~/,
-                //     replacement: '',
-                // },
+                {
+                    find: '@mocks',
+                    replacement: pathResolve('mock') + '/',
+                },
+                {
+                    find: '@i8n',
+                    replacement: pathResolve('i8n') + '/',
+                },
+                {
+                    find: '@tests',
+                    replacement: pathResolve('tests') + '/',
+                },
+                {
+                    find: /^~styles/,
+                    replacement: pathResolve('src/styles') + '/',
+                },
             ],
         },
         plugins: [react()],
@@ -69,9 +77,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
             testTimeout: 30_000,
             hookTimeout: 30_000,
         },
-
-        // Vite optons tailored for Tauri developemnt and only applied in `tauri dev` or `tauri build`
-        // prevent vite from obscuring rust errors
         clearScreen: false,
         // tauri expects a fixed port, fail if that port is not available
         server: {
@@ -79,8 +84,6 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
             strictPort: true,
             host: true,
         },
-        // to make use of `TAURI_DEBUG` and other env variables
-        // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand
         envPrefix: ['VITE_', 'TAURI_'],
         esbuild: {
             pure: ['console.log', 'debugger'],
