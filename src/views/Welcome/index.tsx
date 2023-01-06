@@ -9,13 +9,14 @@ const Welcome = () => {
 
     const handleEntry = () => {
         if (!wrapperRef.current) return
-
-        wrapperRef.current.className = styles['box-close']
+        const classNames = wrapperRef.current.className
+        if (classNames === styles.wrapper) wrapperRef.current.className = styles['wrapper-close']
+        else wrapperRef.current.className = styles['wrapper']
     }
 
     return (
         <>
-            <div ref={wrapperRef} className={styles.wrapper}>
+            <div className={styles.wrapper} ref={wrapperRef}>
                 <div className={styles.box}>
                     <div className={styles.img}>
                         <img />

@@ -41,6 +41,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
                 less: {
                     javascriptEnabled: true,
                 },
+                scss: {
+                    additionalData: '@import "~styles/theme.modules.scss";',
+                },
             },
         },
         resolve: {

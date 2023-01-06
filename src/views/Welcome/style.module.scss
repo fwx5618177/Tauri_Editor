@@ -8,10 +8,12 @@
     justify-content: center;
     align-items: center;
 
+    transition: width 2.8s linear;
+
     .box {
         position: relative;
         width: 40%;
-        height: 50vw;
+        height: 100%;
         border-radius: 8px;
         // background-color:rgba(#8c8683, 0.5);
         color: var(--welcome-color);
@@ -48,7 +50,10 @@
     }
 
     &-close {
-        width: 50%;
-        background-color: blue;
+        @extend .wrapper;
+
+        width: 0%;
+        left: -20%;
+        transition: width 2.8s linear;
     }
 }
