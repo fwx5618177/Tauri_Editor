@@ -42,7 +42,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
                     javascriptEnabled: true,
                 },
                 scss: {
-                    additionalData: '@import "~styles/theme.modules.scss";',
+                    additionalData: '@import "~styles/theme.module.scss";',
                 },
             },
         },

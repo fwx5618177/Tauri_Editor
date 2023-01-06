@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { Button } from 'rsuite'
 import { useRef } from 'react'
 
-const Welcome = () => {
+interface WelcomeProps {
+    onClick?: () => void
+}
+
+const Welcome = (props: WelcomeProps) => {
     const { t } = useTranslation()
     const wrapperRef = useRef<HTMLDivElement | null>(null)
 
@@ -12,6 +16,8 @@ const Welcome = () => {
         const classNames = wrapperRef.current.className
         if (classNames === styles.wrapper) wrapperRef.current.className = styles['wrapper-close']
         else wrapperRef.current.className = styles['wrapper']
+
+        if (!!props.onClick) props.onClick()
     }
 
     return (
