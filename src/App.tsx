@@ -2,6 +2,7 @@ import Welcome from './views/Welcome'
 import styles from '~styles/appHome.module.scss'
 import { useState } from 'react'
 import DirectoryMenu from './views/DirectoryMenu'
+import RichEditor from './views/RichEditor'
 // import AppHeader from '/@/components/AppHeader/AppHeader'
 
 const App = () => {
@@ -22,10 +23,13 @@ const App = () => {
                 <div className={styles.section}>
                     {sequence === 0 && <Welcome onClick={() => setSequence(1)} />}
                     {sequence === 1 && (
-                        <DirectoryMenu
-                            list={new Array(20).fill(list[0])}
-                            onClick={() => setSequence(0)}
-                        />
+                        <>
+                            <DirectoryMenu
+                                list={new Array(20).fill(list[0])}
+                                onClick={() => setSequence(0)}
+                            />
+                            <RichEditor />
+                        </>
                     )}
                 </div>
             </div>

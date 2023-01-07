@@ -1,0 +1,27 @@
+.editorWrapper {
+    position: absolute;
+    display: inline-block;
+
+    color: #fff;
+
+    .editorTextWrapper {
+        // position: relative;
+        margin: 50px;
+        width: 600px;
+        height: 600px;
+        border-radius: 6px;
+        background-color: rgba(#fff, 0.05);
+
+        &:hover {
+            box-shadow: 0 0 0 1px #fff;
+        }
+
+        .editeText {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            cursor: text;
+        }
+    }
+}
