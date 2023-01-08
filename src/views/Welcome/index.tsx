@@ -2,6 +2,7 @@ import styles from './style.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'rsuite'
 import { useRef } from 'react'
+import ThemeStatus from '/@/components/ThemeStatus'
 
 interface WelcomeProps {
     onClick?: () => void
@@ -37,6 +38,8 @@ const Welcome = (props: WelcomeProps) => {
                     >
                         {t('welcomeEntry')}
                     </Button>
+
+                    <ThemeStatus />
                 </div>
             </div>
         </>

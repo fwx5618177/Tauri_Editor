@@ -69,6 +69,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
                     replacement: pathResolve('tests') + '/',
                 },
                 {
+                    find: '@components',
+                    replacement: pathResolve('src/components') + '/',
+                },
+                {
                     find: /^~styles/,
                     replacement: pathResolve('src/styles') + '/',
                 },

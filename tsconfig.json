@@ -27,6 +27,7 @@
       "@i8n/*": ["./i8n/*"],
       "@tests/*": ["./tests/*"],
       "@mocks/*": ["./mocks/*"],
+      "@components": ["./src/components/*"],
       "~styles": ["./src/styles/*"]
     },
     "types": [
