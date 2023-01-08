@@ -3,6 +3,7 @@ import styles from '~styles/appHome.module.scss'
 import { useState } from 'react'
 import DirectoryMenu from './views/DirectoryMenu'
 import RichEditor from './views/RichEditor'
+import LightTransCard from '/@/components/Card/LightTransCard'
 // import AppHeader from '/@/components/AppHeader/AppHeader'
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
                                 onClick={() => setSequence(0)}
                             />
                             <RichEditor />
+                            <LightTransCard />
                         </>
                     )}
                 </div>
